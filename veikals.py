@@ -46,7 +46,7 @@ class ShopingCart(Product):
 Produkts1 = ShopingCart(ob1.name, ob1.price, ob1.quantity)
 Produkts1.add_product_to_cart()
 Produkts1.get_total_price()
-Produkts1.remove_product_to_cart()
+
 
 print()
 print("--------------------------------")
@@ -54,9 +54,20 @@ print()
 
 Produkts2 = ShopingCart(ob2.name, ob2.price, ob2.quantity)
 Produkts2.add_product_to_cart()
+
+kopa = ob1.price*ob1.quantity + ob2.price*ob2.quantity
+
+print("Kopējā summa ir ",kopa, " eiro.")
+
+Produkts1.remove_product_to_cart()
 Produkts2.get_total_price()
 Produkts2.remove_product_to_cart()
 
+print()
+print("--------------------------------")
+print()
+
+print('Lietātāja informācija nomainīta, kāda ir jūsu jaunā informācija? Ievadiet:')
 print()
 print("--------------------------------")
 print()
@@ -68,6 +79,9 @@ class SystemUser:
         self.email = email
 
     def set_user_info(self, newusername, newpassword, newemail):
+        print()
+        print("----------------------------------------------")
+        print()
         print("Vecais info: ")
         print("Username: ",self.username)
         print("Password: ", self.password)
@@ -78,11 +92,14 @@ class SystemUser:
         
 
     def get_user_info(self):
-        print("Info: ")
+        print()
+        print("----------------------------------------------")
+        print()
+        print("Jaunais info: ")
         print("Username: ",self.username)
         print("Password: ", self.password)
         print("Email: ", self.email)
 
 User = SystemUser("Janka", "Suns2024", "kristaps,tas@hmail.lv")
-User.set_user_info(username=input("Ievadiet jauno username: "), password=input("Ievadiet jauno paroli: "), email=input("Ievadiet jauno email: "))
+User.set_user_info(newusername=input("Ievadiet jauno username: "), newpassword=input("Ievadiet jauno paroli: "), newemail=input("Ievadiet jauno email: "))
 User.get_user_info()
